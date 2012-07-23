@@ -11,10 +11,11 @@ parser.add_argument("-t",action="store_true",help="truncate data")
 parser.add_argument("-i",action="store_true",help="insert data")
 _insert = parser.parse_args().i
 _truncate = parser.parse_args().t
-if _insert and _truncate:
-	parser.print_help()
-	import sys
-	sys.exit(0)
+
+if (not  _insert) and (not _truncate):
+    parser.print_help()
+    import sys
+    sys.exit(0)
 
 _MYSQL_HOST="10.28.168.163"
 _MYSQL_USER="pdns"
