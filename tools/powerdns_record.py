@@ -17,12 +17,16 @@ if (not  _insert) and (not _truncate):
     import sys
     sys.exit(0)
 
-_MYSQL_HOST="10.28.168.163"
+_MYSQL_HOST="10.28.168.180"
+#_MYSQL_HOST="10.28.168.163"
 _MYSQL_USER="pdns"
 _MYSQL_PASSWORD="pdns"
 _MYSQL_DB="pdns"
 _TTL="68400"
 _A="10.28.164.231"
+_A2="10.28.162.75"
+_A3="10.28.162.74"
+_URL="http://weibo.com/xiebiao"
 
 dns_file = open("test",'r')
 
@@ -57,10 +61,37 @@ def insert():
                 _TTL,
                 "0",
                 time.time())
+        param_a2 = (domain_id,
+                domain,
+                "A",
+                _A2,
+                _TTL,
+                "0",
+                time.time())
+        param_a3 = (domain_id,
+                domain,
+                "A",
+                _A3,
+                _TTL,
+                "0",
+                time.time())
+        param_a4 = (domain_id,
+                domain,
+                "URL",
+                _URL,
+                _TTL,
+                "0",
+                time.time())
         print param
         print param_a
-        cursor.execute(sql_record,param)
-        cursor.execute(sql_record,param_a)
+        print param_a2
+        print param_a3
+        print param_a4
+        #cursor.execute(sql_record,param)
+        #cursor.execute(sql_record,param_a)
+        #cursor.execute(sql_record,param_a2)
+        #cursor.execute(sql_record,param_a3)
+        cursor.execute(sql_record,param_a4)
         con.commit()
     close(con)
 
