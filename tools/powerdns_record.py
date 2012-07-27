@@ -84,14 +84,14 @@ def insert():
                 time.time())
         print param
         print param_a
-        print param_a2
-        print param_a3
-        print param_a4
-        #cursor.execute(sql_record,param)
-        #cursor.execute(sql_record,param_a)
+        #print param_a2
+        #print param_a3
+        #print param_a4
+        cursor.execute(sql_record,param)
+        cursor.execute(sql_record,param_a)
         #cursor.execute(sql_record,param_a2)
         #cursor.execute(sql_record,param_a3)
-        cursor.execute(sql_record,param_a4)
+        #cursor.execute(sql_record,param_a4)
         con.commit()
     close(con)
 

@@ -8,7 +8,7 @@ import _mysql
 import random
 
 _DNS_TEST_FILE="test"
-_DNS_RECORDS=10000
+_DNS_RECORDS=100000
 _DOMAIN_LENGTH=10
 
 def get_random_string(n):
